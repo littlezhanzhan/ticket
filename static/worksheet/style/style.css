@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*
+ * general ..........................总体
+ * nav...............................导航条
+ * input.............................录入
+ * search............................搜索
+ * count.............................统计
+ */
+/*------------------------------------------
+    general
+------------------------------------------*/
+.container {
+  margin-left: 126.5px; }
+
+textarea {
+  resize: none; }
+
+label {
+  font-weight: normal; }
+
+.error {
+  padding-top: 7px; }
+  .error span {
+    color: #ae1200; }
+
+.hyphen {
+  margin-top: 7px;
+  padding: 0;
+  text-align: center;
+  width: 10px; }
+
+/*------------------------------------------
+    nav
+------------------------------------------*/
+.navbar {
+  margin-bottom: 50px; }
+  .navbar li a {
+    padding: 15px 30px; }
+
+/*------------------------------------------
+    input
+------------------------------------------*/
+.input .form-group {
+  margin-bottom: 25px; }
+.input .suffix {
+  padding-top: 7px;
+  display: inline-block; }
+
+/*------------------------------------------
+    search
+------------------------------------------*/
+.search .form-group {
+  margin-bottom: 25px; }
+.search #search_form .suffix {
+  padding-top: 7px;
+  display: inline-block; }
+.search #search_form div:nth-child(4) .error {
+  padding-left: 4px; }
+.search .page_box {
+  text-align: center; }
+
+/*------------------------------------------
+    count
+------------------------------------------*/
+.count .submit {
+  margin: -7px; }
+.count .table {
+  width: 20%;
+  margin-top: 30px; }
+.count .row:not(:first-child) {
+  margin-top: 50px; }
+.count h3 {
+  text-align: center; }
+.count #chart, .count #type {
+  display: inline-block; }
+.count .no_data {
+  height: 50px;
+  font: 24px/50px 宋体;
+  text-align: center; }
+.count .jqplot-table-legend {
+  font-size: 1em; }
+  .count .jqplot-table-legend tr {
+    height: 40px; }
+  .count .jqplot-table-legend td:nth-child(2) {
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}录入{% endblock %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'worksheet/style/bootstrap-datetimepicker.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="container input">
+        <div class="row ">
+            <div class="col-md-8 col-md-offset-3">
+                <form action="/worksheet/input" class="form-horizontal" id="input_form">
+                    <div class="form-group">
+                        <label for="account" class="col-sm-2 control-label">账号：</label>
+                        <div class="col-sm-3">
+                            <input type="input" class="form-control" id="account" maxlength="11" name="account">
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="suffix">@189.com</span>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-1 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-sm-2 control-label">处理内容：</label>
+                        <div class="col-sm-6">
+                            <textarea name="content" id="content" cols="44" rows="2" ></textarea>
+                        </div>
+                        <div class="col-sm-2 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="method" class="col-sm-2 control-label">处理方法：</label>
+                        <div class="col-sm-6">
+                            <textarea name="method" id="method" cols="44" rows="2" ></textarea>
+                        </div>
+                        <div class="col-sm-2 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="client" class="col-sm-2 control-label">客户端种类：</label>
+                        <div class="col-sm-4">
+                            <select name="client" id="client"   class="form-control" >
+                                <option value="0">请选择</option>
+                                <option value="1">安卓端</option>
+                                <option value="2">苹果端</option>
+                                <option value="3">平台侧</option>
+                                <option value="4">web</option>
+                                <option value="5">PC端</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-2 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="col-sm-2 control-label">类型：</label>
+                        <div class="col-sm-4">
+                            <select name="type" id="type"   class="form-control" >
+                                <option value="0">请选择</option>
+                                <option value="1">上传</option>
+                                <option value="2">下载</option>
+                                <option value="3">解绑</option>
+                                <option value="4">换绑</option>
+                                <option value="5">客户端异常</option>
+                                <option value="6">账号异常</option>
+                                <option value="7">VIP开通</option>
+                                <option value="8">客户端bug</option>
+                                <option value="9">文件损坏</option>
+                                <option value="10">网络故障</option>
+                                <option value="11">dns问题</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-2 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="datetimepicker" class="col-sm-2 control-label">时间：</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="datetimepicker" class="form-control" data-date-format="yyyy-mm-dd" readonly="readonly" name="date">
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-2 error">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-primary btn-lg submit">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'worksheet/js/bootstrap.js' %}"></script>
+<script src="{% static 'worksheet/js/bootstrap-datetimepicker.js' %}"></script>
+<script src="{% static 'worksheet/js/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+<script src="{% static 'worksheet/js/input.js' %}"></script>
+{% endblock %}

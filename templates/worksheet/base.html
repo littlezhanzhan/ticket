@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"><head>
+    	<link rel="stylesheet" type="text/css" href="{% static 'worksheet/style/bootstrap.css' %}" />
+	    <link rel="stylesheet" type="text/css" href="{% static 'worksheet/style/style.css' %}" />
+        {% block style %} {% endblock %}
+    </head>
+    <body>
+        {% block nav %}{% include 'nav.html' %}{% endblock %}
+
+            {% block content %} {% endblock %}
+
+        <script src="{% static 'worksheet/js/jquery.js' %}"></script>
+        {% block script %} {% endblock %}
+        {% if messages %}  
+        <div>
+        <ul class="messages" id="messages">
+        	{% for message in messages %}  
+    		<li{% if SUCESS %} class="{{ SUCESS }}"{% endif %}>{{ message }}</li>  
+   		 	{% endfor %}  
+		</ul>  
+		{% endif %}
+		</div> 
+		<script type="text/javascript">
+		/* document.ready(fu)
+		function submit(){ */
+			var msg = document.getELementsById("messages");
+			alert(msg.val());
+		
+		</script> 
+    </body>
+</html>

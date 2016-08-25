@@ -1,0 +1,117 @@
+/*
+ * general ..........................总体
+ * nav...............................导航条
+ * input.............................录入
+ * search............................搜索
+ * count.............................统计
+ */
+/*------------------------------------------
+    general
+------------------------------------------*/
+.container{
+    margin-left:  126.5px
+}
+textarea {
+    resize: none;
+}
+
+label {
+    font-weight: normal;
+}
+.error{
+    padding-top: 7px;
+    span {
+        color: #ae1200;
+    }
+}
+
+.hyphen {
+    margin-top: 7px;
+    padding: 0;
+    text-align: center;
+    width: 10px;
+}
+/*------------------------------------------
+    nav
+------------------------------------------*/
+.navbar {
+    margin-bottom: 50px;
+    li {
+        a {
+            padding:15px 30px;
+        }
+    }
+}
+/*------------------------------------------
+    input
+------------------------------------------*/
+.input {
+    .form-group {
+        margin-bottom: 25px;
+    }
+    .suffix {
+        padding-top: 7px;
+        display: inline-block;
+    }
+}
+
+/*------------------------------------------
+    search
+------------------------------------------*/
+.search {
+    .form-group {
+        margin-bottom: 25px;
+    }
+    #search_form {
+        .suffix {
+            padding-top: 7px;
+            display: inline-block;
+        }
+        div:nth-child(4) .error{
+            padding-left: 4px;
+        }
+    }
+    .page_box {
+        text-align: center;
+    }
+}
+
+/*------------------------------------------
+    count
+------------------------------------------*/
+.count{
+    .submit {
+        margin: -7px;
+    }
+    .table{
+        width: 20%;
+        margin-top: 30px;
+    }
+    .row:not(:first-child) {
+        margin-top: 50px;
+    }
+    h3 {
+        text-align: center;
+    }
+    #chart,#type{
+        display: inline-block;
+    }
+    .no_data{
+        height:50px;
+        font: 24px/50px 宋体;
+        text-align: center
+    }
+    .jqplot-table-legend {
+        font-size: 1em;
+        tr{
+            height: 40px;
+        }
+        td:nth-child(2){
+            text-align: center;
+        }
+    }
+}
+
+
+
+

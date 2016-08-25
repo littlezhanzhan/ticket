@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}统计{% endblock %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'worksheet/style/jquery.jqplot.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'worksheet/style/bootstrap-datetimepicker.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="container count">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form action="/worksheet/count_result" class="form-horizontal" id="count_form">
+                <div class="form-group">
+                    <label for="datetimepicker" class="col-sm-2 control-label">时间：</label>
+                    <div class="col-sm-2">
+                        <input type="text" id="datetimepicker" class="form-control" data-date-format="yyyy-mm-dd" readonly="readonly" name="startDate">
+                    </div>
+                    <div class="col-sm-1 hyphen">-</div>
+                    <div class="col-sm-2">
+                        <input type="text" id="datetimepicker2" class="form-control" data-date-format="yyyy-mm-dd" readonly="readonly" name="endDate">
+                    </div>
+                    <div class="col-sm-2 error">
+                        <span></span>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary btn-lg submit">统计</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if type and client %}
+        <div class="row">
+            <h3>按客户端类型</h3>
+            <table class="client_count table col-md-6 col-md-offset-2">
+                <tbody>
+                <tr><th>类型</th><th>数量</th></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <h3>按工单种类</h3>
+            <table class="type_count table col-md-6 col-md-offset-2">
+                <tbody>
+                <tr><th>种类</th><th>数量</th></tr>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'worksheet/js/bootstrap-datetimepicker.js' %}"></script>
+<script src="{% static 'worksheet/js/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+<script src="{% static 'worksheet/js/jquery.jqplot.js' %}"></script>
+<script src="{% static 'worksheet/js/jqplot.pieRenderer.js' %}"></script>
+<script>
+    var client = {{ client | safe }};
+    var type = {{ type| safe}};
+</script>
+<script src="{% static 'worksheet/js/count.js' %}"></script>
+{% endblock %}
